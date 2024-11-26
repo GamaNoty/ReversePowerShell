@@ -24,9 +24,8 @@ To allow the script to run, you may need to set the execution policy to `RemoteS
 
 # ReversePowerShell
 
+#### Run in the background
+
 ```powershell
-   cd C:\Users\adm\Downloads
-```
-```powershell
-   Start-Job -ScriptBlock { C:\Users\adm\Downloads\powershell-reverse-shell-DNS-TLS.ps1 }
+   Start-Job -ScriptBlock { C:\Users\adm\Downloads\reverse-powershell.ps1 }
 ```
