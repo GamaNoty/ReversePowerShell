@@ -21,4 +21,9 @@ To allow the script to run, you may need to set the execution policy to `RemoteS
    ```powershell
    Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
    ```
+
 # ReversePowerShell
+
+```powershell
+   cd C:\Users\adm\Downloads
+```
